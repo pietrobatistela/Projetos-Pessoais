@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    background: linear-gradient(to bottom, #f8d9bd, #e5a67d);
+    color: #000000;
+    display: grid;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 680px));
+}
+    
+.new-book {
+    font-family: 'Poppins', sans-serif;
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    background: #6D1B3D;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.new-book p {
+    font-size: 1rem;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    padding: 20px 0 20px 0;
+    font-family: 'Merriweather', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 300px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+h1, h2, span {
+    color: #4d132b;
+}
+
+dialog::backdrop {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 20px;
+    gap: 20px;
+    max-width: 80rem;
+    min-height: 650px;
+    align-items: start;
+    justify-content: center;
+}
+
+.book-card {
+    background: linear-gradient(to bottom, #fff, #f7f6f6);
+    border-radius: 8px;
+    display: grid;
+    grid-auto-rows: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    padding: 10px 30px;
+    min-height: 270px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    max-width: 100%;
+    border: 1px solid lightgrey;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.title:not(input) {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.author:not(input) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pages:not(input), .read:not(input) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.btn-read {
+    font-family: 'Poppins', sans-serif;
+    min-height: 40px;
+    width: 200px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-read:hover {
+    border: 2px solid darkgrey;
+}
+
+.btn-del {
+    font-family: 'Poppins', sans-serif;
+    min-height: 40px;
+    border-radius: 5px;
+    border: none;
+    width: 120px;
+    background-color: #6D1B3D;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-del:hover {
+    background-color: #53142E;
+}
+
+.new-book:hover {
+    background-color: #53142E;
+}
+
+#openAddDialog, #editBookDialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 450px;
+    border: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    gap: 20px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+label {
+    font-size: .85rem;
+    color: rgb(36, 36, 36);
+}
+
+input::placeholder {
+    font-size: .85rem;
+}
+
+legend {
+    margin-bottom: 20px;
+    color: rgb(36, 36, 36);
+}
+
+.buttons {
+    margin-left: auto;
+}
+
+.buttons > button {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+#close {
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+#close:hover {
+    border: 1px solid darkgrey;
+}
+
+#addButton, #editButton {
+    background-color: #6D1B3D;
+    color: white;
+}
+
+#addButton:hover, #editButton:hover {
+    background-color: #53142E;
+}
+
+button > img {
+    filter: invert(1)
+}
+
+.actions-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    
+}
+
+a {
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .85em;
+    gap: 5px;
+    color: rgb(78, 82, 90);
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+.edit-book {
+    margin-left: auto;    
+    position: relative;
+}
+
+.edit-img {
+    position: absolute;
+    left: 80%;
+    top: 30%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 780px){
+    .header {
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 400px));
+        margin-bottom: 20px;
+    }
+
+    .book-card {
+        min-height: 230px;
+    }
+
+    .new-book {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    #openAddDialog, #editBookDialog {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 874px){
+    .header {
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 400px));
+        margin-bottom: 20px;
+    }
+
+    .book-card {
+        min-height: 240px;
+    }
+
+    .logo {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .new-book {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    #openAddDialog, #editBookDialog {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 1295px){
+    .header {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .new-book {
+        width: 100%;
+    }
+
+    #openAddDialog, #editBookDialog {
+        width: 90%;
+        max-width: 450px;
+    }
+}
+
+@media screen  and (max-width: 1465px){
+    .new-book {
+        width: 100%;
+    }
+}
