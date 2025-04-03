@@ -36,7 +36,13 @@ let myLibrary = [
     pages: 461,
     read: true,
     id: crypto.randomUUID()
-
+  },
+  {
+    title: "O Diário de Anne Frank",
+    author: "Anne Frank",
+    pages: 244,
+    read: true,
+    id: crypto.randomUUID()
   },
 ];
 
