@@ -97,7 +97,8 @@ dialog::backdrop {
     min-height: 270px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     max-width: 100%;
-    border: 1px solid lightgrey;
+    background-image: linear-gradient(to right, #4d132b 2%, white 2%);
+
 }
 
 .book-card:hover {
